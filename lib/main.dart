@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'features/note/page/notes_page.dart';
+import 'features/bpm/page/bp_home_view.dart';
+import 'product/navigator/navigation_manager.dart';
+import 'product/navigator/navigator_custom.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,7 +14,7 @@ Future main() async {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget with NavigatorCustom {
   static const String title = 'Notes SQLite';
 
   const MyApp({super.key});
@@ -30,6 +32,15 @@ class MyApp extends StatelessWidget {
             elevation: 0,
           ),
         ),
-        home: const NotesPage(),
+        onUnknownRoute: (settings) {
+          return MaterialPageRoute(
+            builder: (context) {
+              return const BPHomePage();
+            },
+          );
+        },
+        initialRoute: '/',
+        onGenerateRoute: onGenerareRoute,
+        navigatorKey: NavigatorManager.instance.navigatorGlobalKey,
       );
 }
