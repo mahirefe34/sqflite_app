@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../page/notes_page.dart';
+import 'features/note/page/notes_page.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();

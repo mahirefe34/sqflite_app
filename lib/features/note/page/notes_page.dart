@@ -4,7 +4,7 @@ import '../db/notes_database.dart';
 import '../model/note.dart';
 import '../page/edit_note_page.dart';
 import '../page/note_detail_page.dart';
-import '../widget/note_card_widget.dart';
+import '../../../product/widget/note_card_widget.dart';
 
 class NotesPage extends StatefulWidget {
   const NotesPage({super.key});
